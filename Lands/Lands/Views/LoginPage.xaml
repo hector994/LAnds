@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lands.Views.LoginPage"
+             Title="Login"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding Login}">
+            <StackLayout Padding="20">
+                <Label Text="Lands"
+                   HorizontalOptions="Center"
+                   FontSize="Large"
+                   FontAttributes="Bold"></Label>
+                <Label Text="E-mail"
+                   FontSize="Medium"
+                   FontAttributes="Italic"></Label>
+                <Entry x:Name="EntryMail"
+                   Placeholder="enter email"
+                       Text="{Binding Email, Mode=TwoWay}"></Entry>
+                <Label Text="password"
+                   FontSize="Medium"
+                   FontAttributes="Italic"></Label>
+                <Entry x:Name="Entry"
+                   Placeholder="enterpassword"
+                   IsPassword="True"
+                       Text="{Binding Password, Mode=TwoWay}"></Entry>
+
+                <Switch IsToggled="{Binding IsRemembered, Mode=TwoWay}"></Switch>
+                <ActivityIndicator IsRunning="{Binding IsRunning, Mode=TwoWay}">
+
+                </ActivityIndicator>
+                <Button Text="Login"
+                    BorderRadius="23"
+                        Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding IsEnable,Mode=TwoWay}"></Button>
+                <Button Text="Register"
+                    BorderRadius="23"
+                        Command="{Binding RegisterCommand}"
+                        IsEnabled="{Binding IsEnable,Mode=TwoWay}"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
