@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Lands.ViewModels
 {
+    /// <summary>
+    /// pruebas github
+    /// </summary>
     public class MainViewModel
     {
         #region propiedades
